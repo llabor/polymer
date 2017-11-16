@@ -8,6 +8,7 @@
       }
     </style>
     <h2>Hello [[prop1]]!</h2>
+    <h3>Mi valor es [[prop2]]</h3>
   </template>
 
   <script>
@@ -22,6 +23,10 @@
           prop1: {
             type: String,
             value: 'demopolymer-app'
+          },
+          prop2: {
+            type: Number,
+            value: 999
           }
         };
       }
