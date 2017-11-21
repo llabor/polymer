@@ -11,7 +11,8 @@
       <div class="row">
 
     <img class="col-lg-8 col-xs-12" src="https://image.flaticon.com/icons/svg/626/626602.svg" />
-    <button class="col-lg-4 col-xs-12 btn btn-danger">Cargar datos</button>
+    <button on-click="incrementar" class="col-lg-4 col-xs-12 btn btn-danger">Cargar datos</button>
+    <input type="text" placeholder="[[prop3]]" value="{{prop1::input}}" />
     <table class="table table-striped col-lg-12 col-xs-12">
       <thead>
         <th>ID</th>
@@ -20,7 +21,7 @@
       </thead>
       <tbody>
         <tr>
-          <td>1</td>
+          <td>[[prop2]]</td>
           <td>Doraemon</td>
           <td>García</td>
         </tr>
@@ -45,14 +46,23 @@
       static get properties() {
         return {
           prop1: {
-            type: String,
-            value: 'visor'
+            type: String
           },
           prop2: {
             type: Number,
             value: 999
+          },
+          prop3: {
+            type: String,
+            value: 'Indique su login'
           }
         };
+      }
+      incrementar()
+      {
+        this.prop2 = this.prop2 + 1;
+        console.log(this.prop1);
+        console.log(this.prop2);
       }
     }
 
